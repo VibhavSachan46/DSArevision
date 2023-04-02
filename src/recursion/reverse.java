@@ -2,20 +2,39 @@ package recursion;
 
 public class reverse
 {
-    static int sum=0;
+//    static int sum=0;
     public static void main(String[] args) {
-        reverse(1824);
-        System.out.println(sum);
+//        reverse(1245);
+//        System.out.println(sum);
+
+        System.out.println(rev2(1245));
     }
 
-    static void reverse(int n)
+    static int rev2(int n)
     {
-        if(n == 0)
-        {
-            return;
-        }
-        int rem = n%10;
-        sum = sum*10 + rem;
-        reverse(n/10);
+        int d = (int)(Math.log10(n))+1;
+        return helper(n,d);
     }
+
+    private static int helper(int n, int d) {
+        if(n%10 == n)
+        {
+            return n;
+        }
+
+        int rem = n%10;
+        return rem * (int)(Math.pow(10,d-1)) + helper(n/10,d-1);
+
+    }
+
+//    static void reverse(int n)
+//    {
+//        if(n%10 == 0)
+//        {
+//            return;
+//        }
+//        int rem = n%10;
+//        sum = sum*10 + rem;
+//        reverse(n/10);
+//    }
 }
