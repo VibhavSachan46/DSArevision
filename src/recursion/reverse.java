@@ -7,7 +7,16 @@ public class reverse
 //        reverse(1245);
 //        System.out.println(sum);
 
-        System.out.println(rev2(1245));
+//        System.out.println(rev2(1245));
+        int n= 1234321;
+        rev2(n);
+        System.out.println(palindrome(n));
+    }
+
+
+    static boolean palindrome(int n)
+    {
+        return (n==rev2(n));
     }
 
     static int rev2(int n)
