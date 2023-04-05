@@ -5,7 +5,8 @@ public class subset
     public static void main(String[] args) {
 //        remove("","bccaadd");
 
-        System.out.println(remove2("","bccaadd"));
+//        System.out.println(remove2("","bccaadd"));
+        System.out.println(removeApple("","bcappcappleadd"));
     }
 
     static String removeApple(String p,String up)
@@ -17,11 +18,11 @@ public class subset
 
         char ch = up.charAt(0);
 
-        if(ch!='a'){
-            return removeApple(p + ch, up.substring(1));
+        if(up.startsWith("app") && !up.startsWith("apple")){
+            return removeApple(p, up.substring(3));
         }
         else{
-            return removeApple(p, up.substring(1));
+            return removeApple(p + ch, up.substring(1));
         }
     }
 
